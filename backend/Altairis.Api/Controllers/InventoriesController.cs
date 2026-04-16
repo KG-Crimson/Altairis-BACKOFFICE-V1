@@ -24,6 +24,24 @@ public class InventoriesController : ControllerBase
         var currentPage = Math.Max(page, 1);
         var total = await _context.Inventories.CountAsync();
 
+        // Consolidar duplicados existentes (misma RoomTypeId + Date): mantener el primer registro y eliminar el resto.
+        // EF Core no puede traducir la operación compleja a SQL en SQLite, así que materializamos y procesamos en memoria.
+        var allInventories = await _context.Inventories.AsNoTracking().ToListAsync();
+        var duplicateCandidates = allInventories
+                                   .GroupBy(i => new { i.RoomTypeId, i.Date })
+                                   .Where(g => g.Count() > 1)
+                                   .SelectMany(g => g.OrderBy(i => i.Id).Skip(1))
+                                   .ToList();
+        if (duplicateCandidates.Any())
+        {
+            var idsToRemove = duplicateCandidates.Select(d => d.Id).ToList();
+            var toRemove = await _context.Inventories.Where(i => idsToRemove.Contains(i.Id)).ToListAsync();
+            _context.Inventories.RemoveRange(toRemove);
+            await _context.SaveChangesAsync();
+            // Recalc total after cleanup
+            total = await _context.Inventories.CountAsync();
+        }
+
         var items = await _context.Inventories
                                   .AsNoTracking()
                                   .Include(i => i.Hotel)
@@ -69,6 +87,35 @@ public class InventoriesController : ControllerBase
         if (roomType.HotelId != inventory.HotelId)
         {
             return BadRequest("RoomTypeId no pertenece al HotelId.");
+        }
+
+        // Evitar duplicados: si ya existe un inventario para el mismo RoomType+Date,
+        // actualizamos ese registro en lugar de insertar uno nuevo.
+        // Comparación por igualdad de fecha/hora; el cliente envía fechas en formato yyyy-MM-dd
+        // por lo que normalmente la hora será 00:00:00.
+        var existingList = await _context.Inventories
+                                         .Where(i => i.RoomTypeId == inventory.RoomTypeId && i.Date == inventory.Date)
+                                         .ToListAsync();
+        if (existingList.Any())
+        {
+            // Si existen múltiples registros para la misma habitación+fecha, consolidamos:
+            var keep = existingList.First();
+            keep.AvailableRooms = inventory.AvailableRooms;
+            keep.NeedsCleaning = inventory.NeedsCleaning;
+            keep.HotelId = inventory.HotelId;
+            _context.Entry(keep).State = EntityState.Modified;
+            if (existingList.Count > 1)
+            {
+                var remove = existingList.Skip(1).ToList();
+                _context.Inventories.RemoveRange(remove);
+            }
+            await _context.SaveChangesAsync();
+            var updated = await _context.Inventories
+                                        .AsNoTracking()
+                                        .Include(i => i.Hotel)
+                                        .Include(i => i.RoomType)
+                                        .FirstOrDefaultAsync(i => i.Id == keep.Id);
+            return Ok(updated);
         }
 
         _context.Inventories.Add(inventory);

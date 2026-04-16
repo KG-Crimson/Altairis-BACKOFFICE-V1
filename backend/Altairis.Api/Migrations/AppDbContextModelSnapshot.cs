@@ -90,6 +90,9 @@ namespace Altairis.Api.Migrations
                     b.Property<int>("HotelId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("NeedsCleaning")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("RoomTypeId")
                         .HasColumnType("INTEGER");
 

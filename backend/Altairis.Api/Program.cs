@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Altairis.Api.Data;
 using System.Text.Json.Serialization;
+using System.Linq;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +40,37 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     db.Database.Migrate();
+}
+
+// Seed de datos en Development para pruebas rápidas
+if (app.Environment.IsDevelopment())
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+        try
+        {
+            if (!db.Hotels.Any())
+            {
+                var h1 = new Altairis.Api.Models.Hotel { Name = "Demo Grand", City = "Ciudad X", Country = "País Y" };
+                var h2 = new Altairis.Api.Models.Hotel { Name = "Ocean View", City = "Costa", Country = "País Z" };
+                db.Hotels.AddRange(h1, h2);
+                db.SaveChanges();
+
+                db.RoomTypes.AddRange(
+                    new Altairis.Api.Models.RoomType { Name = "Sencilla", Capacity = 1, HotelId = h1.Id },
+                    new Altairis.Api.Models.RoomType { Name = "Doble", Capacity = 2, HotelId = h1.Id },
+                    new Altairis.Api.Models.RoomType { Name = "Suite", Capacity = 3, HotelId = h2.Id },
+                    new Altairis.Api.Models.RoomType { Name = "Familiar", Capacity = 4, HotelId = h2.Id }
+                );
+                db.SaveChanges();
+            }
+        }
+        catch
+        {
+            // no interrumpir el arranque por errores de seed
+        }
+    }
 }
 
 if (app.Environment.IsDevelopment())

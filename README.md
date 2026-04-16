@@ -2,60 +2,82 @@
 
 ## Descripción
 
-**Altairis BackOffice** es una plataforma web para la gestión de hoteles, habitaciones, reservas e inventarios.  
-Permite administrar de manera centralizada los hoteles, tipos de habitaciones, bookings y disponibilidad de habitaciones.  
-Está desarrollado con **.NET 7** en el backend y **Next.js 16** en el frontend, y usa **SQLite** como base de datos.  
+Altairis BackOffice es una pequeña aplicación de gestión como proyecto de prueba técnica. Permite crear y administrar:
+- Hoteles
+- Tipos de habitación (RoomTypes)
+- Reservas (Bookings)
+- Inventarios por fecha (disponibilidad y limpieza)
 
-Esta aplicación está pensada como un **proyecto de prueba técnica**, con funcionalidad completa y diseño sencillo, enfocado en la operatividad del BackOffice.
-
----
-
-## Características principales
-
-- Gestión de **Hoteles**
-  - Crear, editar y eliminar hoteles.
-  - Listado de hoteles existentes.
-  
-- Gestión de **Tipos de Habitaciones (RoomTypes)**
-  - Crear, editar y eliminar tipos de habitaciones.
-  - Asignación a hoteles específicos.
-  
-- Gestión de **Bookings**
-  - Crear y eliminar reservas.
-  - Asignación de habitaciones y hoteles.
-  
-- Gestión de **Inventarios**
-  - Control de disponibilidad de habitaciones por fecha.
-  - Creación y eliminación de inventarios.
-
-- **Panel único y funcional** para todas las operaciones del BackOffice.
+El objetivo es demostrar integración frontend + backend, persistencia con EF Core/SQLite y despliegue con Docker Compose.
 
 ---
 
-## Tecnologías utilizadas
+## Tecnologías
 
-- **Backend:** .NET 8 (C#), Entity Framework Core, SQLite  
-- **Frontend:** Next.js 16, React 18  
-- **Contenedores:** Docker y Docker Compose  
-- **Control de versiones:** Git y GitHub
-
----
-
-## Requisitos
-
-- Docker y Docker Compose instalados en tu máquina.
-- Node.js 20+ (para desarrollo frontend local opcional)
-- .NET 8 SDK (para desarrollo backend local opcional)
+- Backend: .NET 8 (C#), ASP.NET Core, Entity Framework Core, SQLite
+- Frontend: Next.js (App Router), React 18
+- Contenerización: Docker, Docker Compose
 
 ---
 
-## Configuración y ejecución con Docker
+## Requisitos locales
 
-1. Clonar el repositorio:
+- Docker Desktop + Docker Compose
+- (Opcional) Node.js 20+ para desarrollo frontend
+- (Opcional) .NET 8 SDK para desarrollo backend
+
+---
+
+## Arrancar la aplicación (recomendado: Docker Compose)
+
+Desde la raíz del proyecto ejecuta:
 
 ```bash
-git clone https://github.com/KG-Crimson/-Altairis-BackOffice.git
-cd Altairis-BackOffice
+docker-compose down --remove-orphans && docker-compose up --build -d
+```
 
-docker-compose up --build
+Esto:
+- detiene contenedores anteriores (si los hay),
+- reconstruye imágenes (con --build) y
+- arranca `backend` y `frontend` en segundo plano.
+
+Comprobar estado y logs:
+
+```bash
+docker-compose ps
+docker-compose logs --tail=200 backend frontend
+```
+
+URLs por defecto:
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:5113 (endpoints: /api/Hotels, /api/RoomTypes, /api/Inventories, /api/Bookings)
+
+---
+
+## Desarrollo local (opcional)
+
+Frontend (desarrollo, hot-reload):
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Backend (desarrollo):
+
+```bash
+cd backend/Altairis.Api
+dotnet run
+```
+
+Nota: si ejecutas frontend en `npm run dev`, ajusta `NEXT_PUBLIC_API_BASE` para apuntar al backend local (`http://localhost:5113`).
+
+---
+
+## Notas operativas
+
+- El `docker-compose.yml` ya define los servicios `backend` y `frontend` y la variable `NEXT_PUBLIC_API_BASE` usada por el frontend.
+- Para evitar registros duplicados en inventarios la API consolidará entradas con el mismo `RoomTypeId + Date`.
+
 

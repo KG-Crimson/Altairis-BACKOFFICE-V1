@@ -1,0 +1,38 @@
+﻿{
+    "items":  [
+                  {
+                      "id":  1,
+                      "guestName":  "E2E Guest 3",
+                      "checkIn":  "2026-04-15T00:00:00",
+                      "checkOut":  "2026-04-16T00:00:00",
+                      "status":  "Confirmed",
+                      "hotelId":  8,
+                      "hotel":  {
+                                    "id":  8,
+                                    "name":  "E2E Test Hotel",
+                                    "city":  "Test City",
+                                    "country":  "Testland",
+                                    "roomTypes":  [
+
+                                                  ],
+                                    "bookings":  [
+                                                     null
+                                                 ],
+                                    "inventories":  [
+
+                                                    ]
+                                },
+                      "roomTypeId":  8,
+                      "roomType":  {
+                                       "id":  8,
+                                       "name":  "E2E Room",
+                                       "capacity":  2,
+                                       "hotelId":  8,
+                                       "hotel":  null
+                                   }
+                  }
+              ],
+    "total":  1,
+    "page":  1,
+    "pageSize":  50
+}

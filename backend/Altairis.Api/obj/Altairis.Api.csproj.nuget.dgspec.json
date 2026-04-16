@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\abdie\\OneDrive\\Escritorio\\altairis-backoffice\\backend\\Altairis.Api\\Altairis.Api.csproj": {}
+    "C:\\Users\\abdie\\Prueba Tecnica\\-Altairis-BackOffice\\backend\\Altairis.Api\\Altairis.Api.csproj": {}
   },
   "projects": {
-    "c:\\Users\\abdie\\OneDrive\\Escritorio\\altairis-backoffice\\backend\\Altairis.Api\\Altairis.Api.csproj": {
+    "C:\\Users\\abdie\\Prueba Tecnica\\-Altairis-BackOffice\\backend\\Altairis.Api\\Altairis.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\abdie\\OneDrive\\Escritorio\\altairis-backoffice\\backend\\Altairis.Api\\Altairis.Api.csproj",
+        "projectUniqueName": "C:\\Users\\abdie\\Prueba Tecnica\\-Altairis-BackOffice\\backend\\Altairis.Api\\Altairis.Api.csproj",
         "projectName": "Altairis.Api",
-        "projectPath": "c:\\Users\\abdie\\OneDrive\\Escritorio\\altairis-backoffice\\backend\\Altairis.Api\\Altairis.Api.csproj",
+        "projectPath": "C:\\Users\\abdie\\Prueba Tecnica\\-Altairis-BackOffice\\backend\\Altairis.Api\\Altairis.Api.csproj",
         "packagesPath": "C:\\Users\\abdie\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\abdie\\OneDrive\\Escritorio\\altairis-backoffice\\backend\\Altairis.Api\\obj\\",
+        "outputPath": "C:\\Users\\abdie\\Prueba Tecnica\\-Altairis-BackOffice\\backend\\Altairis.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\abdie\\AppData\\Roaming\\NuGet\\NuGet.Config"

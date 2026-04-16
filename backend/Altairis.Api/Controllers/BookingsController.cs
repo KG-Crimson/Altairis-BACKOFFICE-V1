@@ -71,6 +71,11 @@ namespace Altairis.Api.Controllers
             return BadRequest("RoomTypeId no pertenece al HotelId.");
         }
 
+        // Ignore navigation properties from caller to avoid EF trying to insert
+        // related entities when only their Ids are intended to be used.
+        booking.Hotel = null;
+        booking.RoomType = null;
+
         _context.Bookings.Add(booking);
         await _context.SaveChangesAsync();
         return CreatedAtAction(nameof(GetBooking), new { id = booking.Id }, booking);
@@ -100,6 +105,10 @@ namespace Altairis.Api.Controllers
         {
             return BadRequest("RoomTypeId no pertenece al HotelId.");
         }
+
+        // Ignore navigation properties to avoid accidental inserts/updates
+        booking.Hotel = null;
+        booking.RoomType = null;
 
         _context.Entry(booking).State = EntityState.Modified;
         try { await _context.SaveChangesAsync(); }

@@ -4,9 +4,11 @@ services:
       context: ./backend/Altairis.Api
       dockerfile: Dockerfile
     ports:
-      - "5113:8080"
+      - "5113:80"
     environment:
       - DOTNET_RUNNING_IN_CONTAINER=true
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
     volumes:
       - altairis-data:/app/data
 
@@ -14,10 +16,14 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+      args:
+          - NEXT_PUBLIC_API_BASE=http://localhost:5113
     ports:
       - "3000:3000"
     depends_on:
       - backend
+    environment:
+        - NEXT_PUBLIC_API_BASE=http://localhost:5113
 
 volumes:
   altairis-data:

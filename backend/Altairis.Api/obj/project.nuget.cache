@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xLCDCSl3SQE=",
+  "dgSpecHash": "XJDEZ7TLWic=",
   "success": true,
-  "projectFilePath": "c:\\Users\\abdie\\OneDrive\\Escritorio\\altairis-backoffice\\backend\\Altairis.Api\\Altairis.Api.csproj",
+  "projectFilePath": "C:\\Users\\abdie\\Prueba Tecnica\\-Altairis-BackOffice\\backend\\Altairis.Api\\Altairis.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\abdie\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\abdie\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.23\\microsoft.aspnetcore.openapi.8.0.23.nupkg.sha512",
@@ -45,7 +45,7 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Altairis.Api depende de Swashbuckle.AspNetCore (>= 6.6.0), pero no se encontró Swashbuckle.AspNetCore 6.6.0. Se resolvió una mejor coincidencia aproximada de Swashbuckle.AspNetCore 6.6.1.",
+      "message": "Altairis.Api depends on Swashbuckle.AspNetCore (>= 6.6.0) but Swashbuckle.AspNetCore 6.6.0 was not found. An approximate best match of Swashbuckle.AspNetCore 6.6.1 was resolved.",
       "libraryId": "Swashbuckle.AspNetCore",
       "targetGraphs": [
         "net8.0"

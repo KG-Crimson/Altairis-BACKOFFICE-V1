@@ -1,0 +1,217 @@
+﻿{
+    "items":  [
+                  {
+                      "id":  1,
+                      "date":  "2026-04-16T00:00:00",
+                      "availableRooms":  10,
+                      "hotelId":  3,
+                      "hotel":  {
+                                    "id":  3,
+                                    "name":  "Demo Grand",
+                                    "city":  "Ciudad X",
+                                    "country":  "País Y",
+                                    "roomTypes":  [
+
+                                                  ],
+                                    "bookings":  [
+
+                                                 ],
+                                    "inventories":  [
+                                                        null
+                                                    ]
+                                },
+                      "roomTypeId":  1,
+                      "roomType":  {
+                                       "id":  1,
+                                       "name":  "Sencilla",
+                                       "capacity":  1,
+                                       "hotelId":  3,
+                                       "hotel":  null
+                                   },
+                      "needsCleaning":  true
+                  },
+                  {
+                      "id":  2,
+                      "date":  "2026-04-09T00:00:00",
+                      "availableRooms":  10,
+                      "hotelId":  4,
+                      "hotel":  {
+                                    "id":  4,
+                                    "name":  "Ocean View",
+                                    "city":  "Costa",
+                                    "country":  "País Z",
+                                    "roomTypes":  [
+
+                                                  ],
+                                    "bookings":  [
+
+                                                 ],
+                                    "inventories":  [
+                                                        null
+                                                    ]
+                                },
+                      "roomTypeId":  3,
+                      "roomType":  {
+                                       "id":  3,
+                                       "name":  "Suite",
+                                       "capacity":  3,
+                                       "hotelId":  4,
+                                       "hotel":  null
+                                   },
+                      "needsCleaning":  true
+                  },
+                  {
+                      "id":  3,
+                      "date":  "2026-04-09T00:00:00",
+                      "availableRooms":  10,
+                      "hotelId":  3,
+                      "hotel":  {
+                                    "id":  3,
+                                    "name":  "Demo Grand",
+                                    "city":  "Ciudad X",
+                                    "country":  "País Y",
+                                    "roomTypes":  [
+
+                                                  ],
+                                    "bookings":  [
+
+                                                 ],
+                                    "inventories":  [
+                                                        null
+                                                    ]
+                                },
+                      "roomTypeId":  2,
+                      "roomType":  {
+                                       "id":  2,
+                                       "name":  "Doble",
+                                       "capacity":  2,
+                                       "hotelId":  3,
+                                       "hotel":  null
+                                   },
+                      "needsCleaning":  true
+                  },
+                  {
+                      "id":  4,
+                      "date":  "2026-04-16T00:00:00",
+                      "availableRooms":  10,
+                      "hotelId":  3,
+                      "hotel":  {
+                                    "id":  3,
+                                    "name":  "Demo Grand",
+                                    "city":  "Ciudad X",
+                                    "country":  "País Y",
+                                    "roomTypes":  [
+
+                                                  ],
+                                    "bookings":  [
+
+                                                 ],
+                                    "inventories":  [
+                                                        null
+                                                    ]
+                                },
+                      "roomTypeId":  2,
+                      "roomType":  {
+                                       "id":  2,
+                                       "name":  "Doble",
+                                       "capacity":  2,
+                                       "hotelId":  3,
+                                       "hotel":  null
+                                   },
+                      "needsCleaning":  false
+                  },
+                  {
+                      "id":  5,
+                      "date":  "2026-04-16T00:00:00",
+                      "availableRooms":  2,
+                      "hotelId":  4,
+                      "hotel":  {
+                                    "id":  4,
+                                    "name":  "Ocean View",
+                                    "city":  "Costa",
+                                    "country":  "País Z",
+                                    "roomTypes":  [
+
+                                                  ],
+                                    "bookings":  [
+
+                                                 ],
+                                    "inventories":  [
+                                                        null
+                                                    ]
+                                },
+                      "roomTypeId":  3,
+                      "roomType":  {
+                                       "id":  3,
+                                       "name":  "Suite",
+                                       "capacity":  3,
+                                       "hotelId":  4,
+                                       "hotel":  null
+                                   },
+                      "needsCleaning":  false
+                  },
+                  {
+                      "id":  6,
+                      "date":  "2026-04-09T00:00:00",
+                      "availableRooms":  10,
+                      "hotelId":  3,
+                      "hotel":  {
+                                    "id":  3,
+                                    "name":  "Demo Grand",
+                                    "city":  "Ciudad X",
+                                    "country":  "País Y",
+                                    "roomTypes":  [
+
+                                                  ],
+                                    "bookings":  [
+
+                                                 ],
+                                    "inventories":  [
+                                                        null
+                                                    ]
+                                },
+                      "roomTypeId":  1,
+                      "roomType":  {
+                                       "id":  1,
+                                       "name":  "Sencilla",
+                                       "capacity":  1,
+                                       "hotelId":  3,
+                                       "hotel":  null
+                                   },
+                      "needsCleaning":  true
+                  },
+                  {
+                      "id":  7,
+                      "date":  "2026-04-15T00:00:00",
+                      "availableRooms":  5,
+                      "hotelId":  3,
+                      "hotel":  {
+                                    "id":  3,
+                                    "name":  "Demo Grand",
+                                    "city":  "Ciudad X",
+                                    "country":  "País Y",
+                                    "roomTypes":  [
+
+                                                  ],
+                                    "bookings":  [
+
+                                                 ],
+                                    "inventories":  [
+                                                        null
+                                                    ]
+                                },
+                      "roomTypeId":  1,
+                      "roomType":  {
+                                       "id":  1,
+                                       "name":  "Sencilla",
+                                       "capacity":  1,
+                                       "hotelId":  3,
+                                       "hotel":  null
+                                   },
+                      "needsCleaning":  false
+                  }
+              ],
+    "total":  7,
+    "page":  1,
+    "pageSize":  200
+}

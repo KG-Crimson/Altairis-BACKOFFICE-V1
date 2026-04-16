@@ -1,0 +1,128 @@
+﻿[
+    {
+        "id":  3,
+        "name":  "Demo Grand",
+        "city":  "Ciudad X",
+        "country":  "País Y",
+        "roomTypes":  [
+                          {
+                              "id":  1,
+                              "name":  "Sencilla",
+                              "capacity":  1,
+                              "hotelId":  3,
+                              "hotel":  null
+                          },
+                          {
+                              "id":  2,
+                              "name":  "Doble",
+                              "capacity":  2,
+                              "hotelId":  3,
+                              "hotel":  null
+                          }
+                      ],
+        "bookings":  [
+
+                     ],
+        "inventories":  [
+
+                        ]
+    },
+    {
+        "id":  4,
+        "name":  "Ocean View",
+        "city":  "Costa",
+        "country":  "País Z",
+        "roomTypes":  [
+                          {
+                              "id":  3,
+                              "name":  "Suite",
+                              "capacity":  3,
+                              "hotelId":  4,
+                              "hotel":  null
+                          },
+                          {
+                              "id":  4,
+                              "name":  "Familiar",
+                              "capacity":  4,
+                              "hotelId":  4,
+                              "hotel":  null
+                          },
+                          {
+                              "id":  10,
+                              "name":  "Deluxe",
+                              "capacity":  6,
+                              "hotelId":  4,
+                              "hotel":  null
+                          }
+                      ],
+        "bookings":  [
+
+                     ],
+        "inventories":  [
+
+                        ]
+    },
+    {
+        "id":  5,
+        "name":  "E2E Test Hotel",
+        "city":  "Test City",
+        "country":  "Testland",
+        "roomTypes":  [
+                          {
+                              "id":  5,
+                              "name":  "E2E Room",
+                              "capacity":  2,
+                              "hotelId":  5,
+                              "hotel":  null
+                          }
+                      ],
+        "bookings":  [
+
+                     ],
+        "inventories":  [
+
+                        ]
+    },
+    {
+        "id":  6,
+        "name":  "E2E Test Hotel",
+        "city":  "Test City",
+        "country":  "Testland",
+        "roomTypes":  [
+                          {
+                              "id":  6,
+                              "name":  "E2E Room",
+                              "capacity":  2,
+                              "hotelId":  6,
+                              "hotel":  null
+                          }
+                      ],
+        "bookings":  [
+
+                     ],
+        "inventories":  [
+
+                        ]
+    },
+    {
+        "id":  7,
+        "name":  "E2E Test Hotel",
+        "city":  "Test City",
+        "country":  "Testland",
+        "roomTypes":  [
+                          {
+                              "id":  7,
+                              "name":  "E2E Room",
+                              "capacity":  2,
+                              "hotelId":  7,
+                              "hotel":  null
+                          }
+                      ],
+        "bookings":  [
+
+                     ],
+        "inventories":  [
+
+                        ]
+    }
+]

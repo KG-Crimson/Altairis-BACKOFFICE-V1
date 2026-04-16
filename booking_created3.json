@@ -1,0 +1,11 @@
+﻿{
+    "id":  1,
+    "guestName":  "E2E Guest 3",
+    "checkIn":  "2026-04-15T00:00:00",
+    "checkOut":  "2026-04-16T00:00:00",
+    "status":  "Confirmed",
+    "hotelId":  8,
+    "hotel":  null,
+    "roomTypeId":  8,
+    "roomType":  null
+}

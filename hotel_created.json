@@ -1,0 +1,15 @@
+﻿{
+    "id":  8,
+    "name":  "E2E Test Hotel",
+    "city":  "Test City",
+    "country":  "Testland",
+    "roomTypes":  [
+
+                  ],
+    "bookings":  [
+
+                 ],
+    "inventories":  [
+
+                    ]
+}

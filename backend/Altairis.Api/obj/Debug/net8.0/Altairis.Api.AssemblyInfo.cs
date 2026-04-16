@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Altairis.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8a557ba31ca5b057d2ee702ee967497ac4e95d13")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+39c317f8592ff0f0e8bc737966302e71f34bdf28")]
 [assembly: System.Reflection.AssemblyProductAttribute("Altairis.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Altairis.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -23,11 +23,11 @@ namespace Altairis.Api.Models
 
         [Range(1, int.MaxValue)]
         public int HotelId { get; set; }
-        public Hotel Hotel { get; set; }
+        public Hotel? Hotel { get; set; }
 
         [Range(1, int.MaxValue)]
         public int RoomTypeId { get; set; }
-        public RoomType RoomType { get; set; }
+        public RoomType? RoomType { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {

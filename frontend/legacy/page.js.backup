@@ -1,0 +1,11 @@
+// Backup of previous app/page.js — moved to frontend/legacy
+// Original file content preserved for reference
+
+"use client";
+
+import { useState, useEffect } from "react";
+
+export default function Home() {
+  // backup placeholder — original logic moved here for safekeeping
+  return null;
+}

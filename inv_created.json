@@ -1,0 +1,10 @@
+﻿{
+    "id":  7,
+    "date":  "2026-04-15T00:00:00",
+    "availableRooms":  5,
+    "hotelId":  3,
+    "hotel":  null,
+    "roomTypeId":  1,
+    "roomType":  null,
+    "needsCleaning":  false
+}
